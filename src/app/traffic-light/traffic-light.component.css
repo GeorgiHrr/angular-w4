@@ -1,0 +1,53 @@
+.trafficLightPanel{
+    background-color: #9a9a9a;
+    border: solid black 1px;
+    display: flex;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.redButton{
+    background-color: #5a0000;
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+}
+.redButtonActive{
+    background-color: #ff0000;
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+}
+
+.yellowButton{
+    background-color: #595900;
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+}
+.yellowButtonActive{
+    background-color: #ffff00;
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+}
+
+.greenButton{
+    background-color: #005000;
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+}
+.greenButtonActive{
+    background-color: #00ff00;
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+}
+
