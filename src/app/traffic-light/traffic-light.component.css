@@ -13,7 +13,7 @@
     border: none;
     border-radius: 50%;
 }
-.redButtonActive{
+.redButtonOn{
     background-color: #ff0000;
     width: 100px;
     height: 100px;
@@ -28,7 +28,7 @@
     border: none;
     border-radius: 50%;
 }
-.yellowButtonActive{
+.yellowButtonOn{
     background-color: #ffff00;
     width: 100px;
     height: 100px;
@@ -43,7 +43,7 @@
     border: none;
     border-radius: 50%;
 }
-.greenButtonActive{
+.greenButtonOn{
     background-color: #00ff00;
     width: 100px;
     height: 100px;

@@ -1,5 +1,5 @@
 <div class="trafficLightPanel">
-    <button class="redButton">r</button>
-    <button class="yellowButton">r</button>
-    <button class="greenButton">r</button>
+    <button [class]="trafficLightCollection[0].isRedOn?'redButtonOn':'redButton'"></button>
+    <button [class]="trafficLightCollection[0].isYellowOn?'yellowButtonOn':'yellowButton'"></button>
+    <button [class]="trafficLightCollection[0].isGreenOn?'greenButtonOn':'greenButton'"></button>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TrafficLightComponent } from '../traffic-light/traffic-light.component';
 
@@ -11,5 +11,14 @@ import { TrafficLightComponent } from '../traffic-light/traffic-light.component'
 })
 
 export class CrossroadComponent{
+  public isRedActive = true;
+  public isYellowActive = false;
+  public isGreenActive = true;
+  public isMirrored = true;
 
+  public redTime = 5000;
+  public yelloTime = 2000;
+  public greenTime = 5000;
+
+  
 }
