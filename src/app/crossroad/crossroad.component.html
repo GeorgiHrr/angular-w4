@@ -11,12 +11,12 @@
         [isEmergency]="isEmergency"
         (onWrongCrossing)="processOnWrongCrossing($event)"
         ></app-traffic-light></div>
-    <div>
+    <div class="centerDiv">
         @if (isCrossingWrong) {
             {{showMessage()}}
             <H1>Wrong Crossing</H1>
         }
-        <button (click)="activateEmergency()">Emergency</button>
+        <button [disabled]="isEmergencyButtonDisabled" (click)="activateEmergency()">Emergency</button>
     </div>
     <div  class="rotate"><app-traffic-light
         [isEmergency]="isEmergency"

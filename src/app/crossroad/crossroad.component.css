@@ -15,3 +15,7 @@
 .rotate{
     transform: rotate(90deg);
 }
+
+.centerDiv{
+    text-align: center;
+}

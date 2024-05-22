@@ -13,7 +13,8 @@ import { TrafficLightComponent } from '../traffic-light/traffic-light.component'
 export class CrossroadComponent{
   public isMirrored       = true;
   public isCrossingWrong  = false;
-  public isEmergency      = false;
+  public isEmergency;
+  public isEmergencyButtonDisabled;
 
   public processOnWrongCrossing(onWrongCrossing: boolean){
     this.isCrossingWrong = onWrongCrossing;
@@ -25,5 +26,12 @@ export class CrossroadComponent{
 
   public activateEmergency(){
     this.isEmergency = true;
+    this.isEmergencyButtonDisabled = true;
+    setTimeout(() => {
+      this.isEmergency = false; 
+      this.isEmergencyButtonDisabled = false;
+      console.log(this.isEmergency);
+    }, 20000);
+
   }
 }

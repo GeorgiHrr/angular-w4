@@ -61,7 +61,6 @@ export class TrafficLightComponent implements OnInit, OnChanges{
 
         this.trafficLightCollection[0].isRedOn = false;
         this.resetTimer();
-        this.redTimeLeft = 5;
         this.isItReversed = false;
         this.startYellowTimer();
 
@@ -81,7 +80,6 @@ export class TrafficLightComponent implements OnInit, OnChanges{
 
         this.trafficLightCollection[0].isYellowOn = false;
         this.resetTimer();
-        this.yellowTimeLeft = 2;
         if(!this.isItReversed){
           this.startGreenTimer();
         }else{
@@ -104,7 +102,6 @@ export class TrafficLightComponent implements OnInit, OnChanges{
 
         this.trafficLightCollection[0].isGreenOn = false;
         this.resetTimer();
-        this.greenTimeLeft = 5;
         this.isItReversed = true;
         this.startYellowTimer();
 
@@ -114,6 +111,10 @@ export class TrafficLightComponent implements OnInit, OnChanges{
 
   public resetTimer(){
     clearInterval(this.interval);
+    this.redTimeLeft        = 5;
+    this.yellowTimeLeft     = 2;
+    this.greenTimeLeft      = 5;
+    this.emergencyTimeLeft  = 10;
   }
 
   public startEmergency(){
@@ -132,7 +133,7 @@ export class TrafficLightComponent implements OnInit, OnChanges{
 
         this.trafficLightCollection[0].isYellowOn = false;
         this.resetTimer();
-        this.emergencyTimeLeft = 10;
+        this.isEmergency = false;
         if(this.isMirrored){
           this.startGreenTimer();
         }else{
@@ -145,7 +146,6 @@ export class TrafficLightComponent implements OnInit, OnChanges{
 
   public crossTheRoad(){
     if (this.trafficLightCollection[0].isYellowOn) {
-      //console.log("wrong crossing")
       this.onWrongCrossing.emit(true);
     }
   }
