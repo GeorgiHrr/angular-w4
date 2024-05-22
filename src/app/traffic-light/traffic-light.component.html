@@ -1,4 +1,5 @@
 <div class="trafficLightPanel">
+    <button [disabled]="trafficLightCollection[0].isRedOn" (click)="crossTheRoad()">Пресечи</button>
     <button [class]="trafficLightCollection[0].isRedOn?'redButtonOn':'redButton'"></button>
     <button [class]="trafficLightCollection[0].isYellowOn?'yellowButtonOn':'yellowButton'"></button>
     <button [class]="trafficLightCollection[0].isGreenOn?'greenButtonOn':'greenButton'"></button>

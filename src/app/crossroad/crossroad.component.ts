@@ -11,14 +11,22 @@ import { TrafficLightComponent } from '../traffic-light/traffic-light.component'
 })
 
 export class CrossroadComponent{
-  public isRedActive = true;
-  public isYellowActive = false;
-  public isGreenActive = true;
-  public isMirrored = true;
+  public isRedActive      = true;
+  public isYellowActive   = false;
+  public isGreenActive    = true;
+  public isMirrored       = true;
+  public isCrossingWrong  = false;
+  public isEmergency      = false;
 
-  public redTime = 5000;
-  public yelloTime = 2000;
-  public greenTime = 5000;
+  public processOnWrongCrossing(onWrongCrossing: boolean){
+    this.isCrossingWrong = onWrongCrossing;
+  }
 
-  
+  public showMessage(){
+    setTimeout(() => {this.isCrossingWrong = false}, 2000);
+  }
+
+  public activateEmergency(){
+    this.isEmergency = true;
+  }
 }

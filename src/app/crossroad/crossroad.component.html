@@ -1,14 +1,34 @@
 <div class="crossroadPanel">
     <div></div>
-    <div><app-traffic-light></app-traffic-light></div>
+    <div><app-traffic-light
+        [isMirrored]="isMirrored"
+        [isEmergency]="isEmergency"
+        (onWrongCrossing)="processOnWrongCrossing($event)"
+        ></app-traffic-light></div>
     <div></div>
 
-    <div  class="rotate"><app-traffic-light></app-traffic-light></div>
-    <div></div>
-    <div  class="rotate"><app-traffic-light></app-traffic-light></div>
+    <div  class="rotate"><app-traffic-light
+        [isEmergency]="isEmergency"
+        (onWrongCrossing)="processOnWrongCrossing($event)"
+        ></app-traffic-light></div>
+    <div>
+        @if (isCrossingWrong) {
+            {{showMessage()}}
+            <H1>Wrong Crossing</H1>
+        }
+        <button (click)="activateEmergency()">Emergency</button>
+    </div>
+    <div  class="rotate"><app-traffic-light
+        [isEmergency]="isEmergency"
+        (onWrongCrossing)="processOnWrongCrossing($event)"
+        ></app-traffic-light></div>
     
     <div></div>
-    <div><app-traffic-light></app-traffic-light></div>
+    <div><app-traffic-light
+        [isMirrored]="isMirrored"
+        [isEmergency]="isEmergency"
+        (onWrongCrossing)="processOnWrongCrossing($event)"
+        ></app-traffic-light></div>
     <div></div>
 </div>
 
