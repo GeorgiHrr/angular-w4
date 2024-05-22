@@ -11,9 +11,6 @@ import { TrafficLightComponent } from '../traffic-light/traffic-light.component'
 })
 
 export class CrossroadComponent{
-  public isRedActive      = true;
-  public isYellowActive   = false;
-  public isGreenActive    = true;
   public isMirrored       = true;
   public isCrossingWrong  = false;
   public isEmergency      = false;

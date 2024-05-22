@@ -34,7 +34,7 @@ export class TrafficLightComponent implements OnInit, OnChanges{
 
   @Output() public onWrongCrossing = new EventEmitter<boolean>();
 
-  ngOnInit(): void {
+  ngOnInit() {
     if(this.isMirrored){
       this.startGreenTimer();
     }else{
@@ -52,15 +52,19 @@ export class TrafficLightComponent implements OnInit, OnChanges{
   startRedTimer() {
     this.interval = setInterval(() => {
       if(this.redTimeLeft > 0) {
+
         this.trafficLightCollection[0].isRedOn = true;
         console.log("Red Timer: " + this.redTimeLeft)
         this.redTimeLeft--;
+
       } else {
+
         this.trafficLightCollection[0].isRedOn = false;
         this.resetTimer();
         this.redTimeLeft = 5;
         this.isItReversed = false;
         this.startYellowTimer();
+
       }
     },1000)
   }
@@ -68,10 +72,13 @@ export class TrafficLightComponent implements OnInit, OnChanges{
   startYellowTimer() {
     this.interval = setInterval(() => {
       if(this.yellowTimeLeft > 0) {
+
         this.trafficLightCollection[0].isYellowOn = true;
         console.log("Yellow Timer: " + this.yellowTimeLeft)
         this.yellowTimeLeft--;
+
       } else {
+
         this.trafficLightCollection[0].isYellowOn = false;
         this.resetTimer();
         this.yellowTimeLeft = 2;
@@ -88,15 +95,19 @@ export class TrafficLightComponent implements OnInit, OnChanges{
   startGreenTimer() {
     this.interval = setInterval(() => {
       if(this.greenTimeLeft > 0) {
+
         this.trafficLightCollection[0].isGreenOn = true;
         console.log("Green Timer: " + this.greenTimeLeft)
         this.greenTimeLeft--;
+
       } else {
+
         this.trafficLightCollection[0].isGreenOn = false;
         this.resetTimer();
         this.greenTimeLeft = 5;
         this.isItReversed = true;
         this.startYellowTimer();
+
       }
     },1000)
   }
@@ -112,10 +123,13 @@ export class TrafficLightComponent implements OnInit, OnChanges{
 
     this.interval = setInterval(() => {
       if(this.emergencyTimeLeft > 0) {
+
         this.trafficLightCollection[0].isYellowOn = true;
         console.log("Emergency Timer: " + this.emergencyTimeLeft)
         this.emergencyTimeLeft--;
+
       } else {
+
         this.trafficLightCollection[0].isYellowOn = false;
         this.resetTimer();
         this.emergencyTimeLeft = 10;
@@ -124,6 +138,7 @@ export class TrafficLightComponent implements OnInit, OnChanges{
         }else{
           this.startRedTimer();
         }
+
       }
     },1000)
   }
@@ -133,16 +148,5 @@ export class TrafficLightComponent implements OnInit, OnChanges{
       //console.log("wrong crossing")
       this.onWrongCrossing.emit(true);
     }
-  }
-
-
-  public turnRedLightOnAndOff(){
-    this.trafficLightCollection[0].isRedOn    = !this.trafficLightCollection[0].isRedOn;
-  }
-  public turnYellowLightOnAndOff(){
-    this.trafficLightCollection[0].isYellowOn = !this.trafficLightCollection[0].isYellowOn;
-  }
-  public turnGreenLightOnAndOff(){
-    this.trafficLightCollection[0].isGreenOn  = !this.trafficLightCollection[0].isGreenOn;
   }
 }
